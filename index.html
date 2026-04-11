@@ -27,15 +27,59 @@
   <div id="search-view" class="view hidden">
   </div>
 
-  <!-- CERTIFICATE: empty — filled by JS in Phase 02 -->
+  <!-- CERTIFICATE: filled by renderCertificateView() in Phase 02 -->
   <div id="certificate-view" class="view hidden">
+    <div class="certificate-wrapper">
+      <div class="certificate" id="certificate">
+
+        <div class="cert-header">
+          <img id="cert-logo" src="" alt="" class="cert-logo" />
+          <p class="cert-org-name" id="cert-org-name"></p>
+        </div>
+
+        <div class="cert-title-block">
+          <div class="cert-ornament-line"></div>
+          <p class="cert-heading-label" id="cert-heading-label"></p>
+          <div class="cert-ornament-line"></div>
+        </div>
+
+        <div class="cert-body">
+          <p class="cert-pre-name-text" id="cert-pre-name-text"></p>
+          <h1 class="cert-name" id="cert-name"></h1>
+          <p class="cert-post-name-text" id="cert-post-name-text"></p>
+          <h2 class="cert-workshop" id="cert-workshop"></h2>
+          <p class="cert-description hidden" id="cert-description"></p>
+        </div>
+
+        <div class="cert-footer">
+          <div class="cert-footer-left">
+            <time class="cert-date" id="cert-date" datetime=""></time>
+            <span class="cert-footer-label" id="cert-date-label"></span>
+          </div>
+          <div class="cert-footer-center">
+            <img id="cert-seal" src="" alt="Official Seal" class="cert-seal" />
+          </div>
+          <div class="cert-footer-right">
+            <img id="cert-signature" src="" alt="Authorized Signature" class="cert-signature" />
+            <p class="cert-authorized-name" id="cert-authorized-name"></p>
+            <span class="cert-footer-label" id="cert-sig-label"></span>
+          </div>
+        </div>
+
+        <div class="cert-bottom-row">
+          <p class="cert-id-label" id="cert-id-label"></p>
+        </div>
+
+      </div>
+    </div>
   </div>
 
   <!-- ERROR: static message — hardcoded because branding config may be the thing that failed -->
   <div id="error-view" class="view hidden" role="alert">
     <div class="error-container">
       <span class="error-icon" aria-hidden="true">⚠</span>
-      <p class="error-message">Could not load configuration. Please try again.</p>
+      <p class="error-message" id="error-message">Could not load configuration. Please try again.</p>
+      <p class="error-detail hidden" id="error-detail"></p>
     </div>
   </div>
 
