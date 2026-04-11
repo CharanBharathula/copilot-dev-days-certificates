@@ -1,9 +1,0 @@
-{
-  "certificate_id": "jane-doe-at-example-com",
-  "name": "Jane Doe",
-  "email": "jane.doe@example.com",
-  "workshop": "Introduction to Machine Learning",
-  "date": "April 5, 2026",
-  "date_iso": "2026-04-05",
-  "description": "Completed 16 hours of hands-on training covering supervised learning, neural networks, and model evaluation."
-}
