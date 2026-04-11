@@ -32,11 +32,6 @@
     <div class="certificate-wrapper">
       <div class="certificate" id="certificate">
 
-        <!-- QR code: top-right corner, encodes page URL for verification -->
-        <div class="cert-qr-corner" aria-label="Scan to verify certificate">
-          <span class="cert-qr-label">Scan to verify</span>
-          <div id="cert-qr" class="cert-qr"></div>
-        </div>
         <div class="cert-corner cert-corner-tl" aria-hidden="true"></div>
         <div class="cert-corner cert-corner-tr" aria-hidden="true"></div>
         <div class="cert-corner cert-corner-bl" aria-hidden="true"></div>
@@ -59,6 +54,10 @@
           <p class="cert-post-name-text" id="cert-post-name-text"></p>
           <h2 class="cert-workshop" id="cert-workshop"></h2>
           <p class="cert-description hidden" id="cert-description"></p>
+          <div class="cert-qr-section" id="cert-qr-section">
+            <div id="cert-qr" class="cert-qr"></div>
+            <span class="cert-qr-label">Scan to verify</span>
+          </div>
         </div>
 
         <div class="cert-footer">

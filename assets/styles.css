@@ -197,6 +197,7 @@ body {
   text-transform: uppercase;
   color: var(--primary-color);
   margin: 0;
+  text-align: center;
 }
 
 /* Title block: gradient ornament line — heading label — gradient ornament line */
@@ -358,16 +359,13 @@ body {
   color: var(--secondary-color);
 }
 
-/* QR code: absolute top-right corner inside the inner border */
-.cert-qr-corner {
-  position: absolute;
-  top: 36px;
-  right: 36px;
+/* QR code: centered inline block after description text */
+.cert-qr-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  z-index: 1;
+  gap: 5px;
+  margin-top: 10px;
 }
 
 .cert-qr {
@@ -383,11 +381,11 @@ body {
 
 .cert-qr-label {
   font-family: var(--font-body);
-  font-size: 0.58rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--muted-color);
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 /* ========================================
@@ -446,7 +444,7 @@ body {
     color: var(--primary-color);
   }
 
-  /* QR canvas renders natively in print — no override needed */
+  /* QR canvas renders exactly as on screen — needed for clean PDF output */
   .cert-qr canvas,
   .cert-qr img {
     -webkit-print-color-adjust: exact;
