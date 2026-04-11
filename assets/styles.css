@@ -132,7 +132,7 @@ body {
 .certificate {
   width: 100%;
   aspect-ratio: 297 / 210;
-  background: #fdfcf8;
+  background: radial-gradient(ellipse at 50% 40%, #ffffff 0%, #f8f5ee 100%);
   border: var(--border-width) double var(--border-color);
   font-family: var(--font-body);
   color: var(--text-color);
@@ -144,6 +144,10 @@ body {
   /* Inner gold border drawn via outline with negative offset */
   outline: 1.5px solid rgba(200, 169, 81, 0.45);
   outline-offset: -18px;
+  /* Force all colors and backgrounds to print exactly as shown on screen
+     This fixes logos and text being invisible when 'Background graphics' is OFF */
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 /* Corner L-bracket ornaments via CSS multi-background gradients */
@@ -250,7 +254,12 @@ body {
   font-family: var(--font-heading);
   font-size: 3.4rem;
   font-weight: 700;
-  color: var(--primary-color);
+  /* Gradient text: navy -> gold — stands out as the visual centrepiece */
+  background: linear-gradient(135deg, var(--primary-color) 0%, #8b6914 40%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--primary-color); /* fallback for non-supporting browsers */
   margin: 5px 0 3px;
   line-height: 1.1;
   letter-spacing: -0.01em;
@@ -260,11 +269,11 @@ body {
 .cert-name::after {
   content: '';
   display: block;
-  width: 60px;
-  height: 2px;
-  background: var(--secondary-color);
-  margin: 8px auto 0;
-  border-radius: 1px;
+  width: 80px;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
 .cert-workshop {
@@ -415,6 +424,18 @@ body {
     padding: 12mm 18mm 10mm;
     box-shadow: none;
     outline: none;
+    /* Ensure print-color-adjust works in both Chromium and Firefox */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Restore solid name color for print (gradient text can ghost on some printers) */
+  .cert-name {
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: var(--primary-color);
+    color: var(--primary-color);
   }
 
   /* Print-safe inner border via positioned ::after */
