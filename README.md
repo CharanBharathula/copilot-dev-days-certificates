@@ -78,9 +78,9 @@ In your fork, navigate to the `data/` folder and create the file from Step 2 wit
 | `workshop` | ✅ | Keep as-is: `Github Copilot Dev Days 2026 - Microsoft, Hyderabad` |
 | `date` | ✅ | Keep as-is: `April 18, 2026` |
 | `date_iso` | ✅ | Keep as-is: `2026-04-18` |
-| `description` | ✅ | One sentence describing what you learned - personalise this |
+| `description` | ✅ | Keep as-is: `Completed an intensive program on learning Github Copilot, customizing Copilot agents, covering Copilot CLI, VS Code, Agentic workflows, and building production-grade application development with Copilot.` |
 
-> **Note:** Do not copy sample data as-is. Update `certificate_id`, `name`, `email`, and `description` with your own details.
+> **Note:** Do not copy sample data as-is. Update `certificate_id`, `name`, and `email`, with your own details.
 
 ### Step 4 - Open a Pull Request
 
